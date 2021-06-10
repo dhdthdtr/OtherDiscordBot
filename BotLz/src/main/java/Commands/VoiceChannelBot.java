@@ -57,6 +57,5 @@ public class VoiceChannelBot extends ListenerAdapter {
             channel.sendMessage("Disconnected from the voice channel!").queue();
         }
     }
-
 }
 

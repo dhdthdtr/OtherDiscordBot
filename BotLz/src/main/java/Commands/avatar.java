@@ -11,7 +11,7 @@ import java.util.List;
 
 public class avatar extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
-        if(event.getMessage().getContentRaw().startsWith("!avatar"))
+        if(event.getMessage().getContentRaw().startsWith(".avatar"))
         {
             List<Member> mentionedMembers = event.getMessage().getMentionedMembers();
             if (mentionedMembers.isEmpty()) {

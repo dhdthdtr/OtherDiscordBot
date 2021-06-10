@@ -118,7 +118,7 @@ public class Doge extends ListenerAdapter {
 
         Random rand = new Random();
         int number = rand.nextInt(DogeAPI.length);
-        if(messageSent.equalsIgnoreCase("!doge")) {
+        if(messageSent.equalsIgnoreCase(".doge")) {
             EmbedBuilder dogeEmbed = new EmbedBuilder();
             dogeEmbed.setColor(Color.PINK);
             dogeEmbed.setTitle("Your doge: ");

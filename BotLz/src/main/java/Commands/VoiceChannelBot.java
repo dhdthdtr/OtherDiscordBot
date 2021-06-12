@@ -19,7 +19,7 @@ public class VoiceChannelBot extends ListenerAdapter {
 
         if(messageSent.equals(".join")) {
             if(!event.getGuild().getSelfMember().hasPermission(channel, Permission.VOICE_CONNECT)) {
-                channel.sendMessage("I do not have permissions to join a voice channel!").queue();
+                channel.sendMessage("Mở con mẹ mày phòng ra, kêu kêu cc!").queue();
                 return;
             }
             // Creates a variable equal to the channel that the user is in.
@@ -27,14 +27,14 @@ public class VoiceChannelBot extends ListenerAdapter {
             // Checks if they are in a channel -- not being in a channel means that the variable = null.
             if(connectedChannel == null) {
                 // Don't forget to .queue()!
-                channel.sendMessage("You are not connected to a voice channel!").queue();
+                channel.sendMessage("Mày đã vô phòng voice đâu mà gọi hồn tao?! Đánh chetme mày giờ").queue();
                 return;
             }
             // Gets the audio manager.
             AudioManager audioManager = event.getGuild().getAudioManager();
             // When somebody really needs to chill.
             if(audioManager.isAttemptingToConnect()) {
-                channel.sendMessage("The bot is already trying to connect! Enter the chill zone!").queue();
+                channel.sendMessage("Bố mày đang vô với mày này! Vô phòng voice trước đi rồi hãy sủa!").queue();
                 return;
             }
             // Connects to the channel.
@@ -48,13 +48,13 @@ public class VoiceChannelBot extends ListenerAdapter {
             // Checks if the bot is connected to a voice channel.
             if(connectedChannel == null) {
                 // Get slightly fed up at the user.
-                channel.sendMessage("I am not connected to a voice channel!").queue();
+                channel.sendMessage("Bố mày có trong phòng voice lz nào đâu mà ngắt bố mày!").queue();
                 return;
             }
             // Disconnect from the channel.
             event.getGuild().getAudioManager().closeAudioConnection();
             // Notify the user.
-            channel.sendMessage("Disconnected from the voice channel!").queue();
+            channel.sendMessage("Đã ngắt kết nối tới phòng voice!").queue();
         }
     }
 }

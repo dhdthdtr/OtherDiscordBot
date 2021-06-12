@@ -2,14 +2,16 @@ package Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class LinkMeet extends ListenerAdapter{
     @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
+    public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         EmbedBuilder embed = new EmbedBuilder();
         String messageSent = event.getMessage().getContentRaw();
         SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm:ss");
@@ -36,6 +38,7 @@ public class LinkMeet extends ListenerAdapter{
             embed.addField(Wed,K1 + "English For Workplace Communication\nhttps://meet.google.com/jns-jztt-xnc" + "\n" + K2 + "Object Oriented Programming\nhttps://meet.google.com/nyv-cvzt-hpp" + "\n" + K3 + "Introduction To Communication\nhttps://meet.google.com/yrc-sqpt-qgt",true);
             embed.addField(Thu,K3 + "English For Oral Communication\nhttps://meet.google.com/div-rhbh-etk" + "\n" + K4 + "Database\nhttps://meet.google.com/ice-rpnt-guw",true);
             embed.addField(Fri,K1 + "English For Workplace Communication\nhttps://meet.google.com/jns-jztt-xnc" + "\n" + K2 + "Object Oriented Programming\nhttps://meet.google.com/nyv-cvzt-hpp",true);
+            embed.setColor(Color.pink);
             event.getChannel().sendMessage(embed.build()).queue();
         }
     }

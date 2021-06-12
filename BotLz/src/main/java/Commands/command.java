@@ -34,7 +34,9 @@ public class command extends ListenerAdapter {
         }
 
         else if(messageSent.equalsIgnoreCase(".time")) {
-            event.getChannel().sendMessage("Thời gian: " + formatTime.format(date)).queue();
+            if (!event.getMember().getUser().isBot()) {
+                event.getChannel().sendMessage("Thời gian: " + formatTime.format(date)).queue();
+            }
         }
 
         else if(messageSent.contains("Minh Anh")) {
